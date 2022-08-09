@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_common_reviews",
+  "info": {
+    "displayName": "Review",
+    "icon": "star"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "comment": {
+      "type": "text"
+    },
+    "thumb": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

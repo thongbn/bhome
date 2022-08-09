@@ -1,0 +1,14 @@
+diff --git a/node_modules/@strapi/admin/admin/src/content-manager/components/Inputs/index.js b/node_modules/@strapi/admin/admin/src/content-manager/components/Inputs/index.js
+index 15a75e8..fd8c315 100644
+--- a/node_modules/@strapi/admin/admin/src/content-manager/components/Inputs/index.js
++++ b/node_modules/@strapi/admin/admin/src/content-manager/components/Inputs/index.js
+@@ -243,7 +243,8 @@ function Inputs({
+       placeholder={placeholder ? { id: placeholder, defaultMessage: placeholder } : null}
+       required={fieldSchema.required || false}
+       step={step}
+-      type={inputType}
++      // type={inputType}
++      type={fieldSchema.pluginOptions?.extendComponent || inputType}
+       // validations={validations}
+       value={inputValue}
+       withDefaultValue={false}

@@ -1,0 +1,31 @@
+{
+  "kind": "singleType",
+  "collectionName": "settings",
+  "info": {
+    "singularName": "setting",
+    "pluralName": "settings",
+    "displayName": "Setting",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "getFlyApiKey": {
+      "type": "string"
+    },
+    "googleApiKey": {
+      "type": "string"
+    },
+    "adminEmail": {
+      "type": "email"
+    },
+    "saleEmail": {
+      "type": "email"
+    },
+    "emailPhone": {
+      "type": "string"
+    }
+  }
+}

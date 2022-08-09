@@ -1,0 +1,74 @@
+{
+  "kind": "collectionType",
+  "collectionName": "retails",
+  "info": {
+    "singularName": "retail",
+    "pluralName": "retails",
+    "displayName": "Retail",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "address": {
+      "type": "string",
+      "required": true
+    },
+    "location": {
+      "type": "json",
+      "pluginOptions": {
+        "extendComponent": "locationInput"
+      }
+    },
+    "city": {
+      "type": "string",
+      "pluginOptions": {
+        "extendComponent": "cityInput"
+      }
+    },
+    "district": {
+      "type": "string",
+      "targetField": "city",
+      "pluginOptions": {
+        "extendComponent": "districtInput"
+      }
+    },
+    "shortDescription": {
+      "type": "text"
+    },
+    "thumb": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "worktime": {
+      "type": "text"
+    },
+    "showFooter": {
+      "type": "boolean",
+      "default": false
+    },
+    "showContact": {
+      "type": "boolean",
+      "default": false
+    },
+    "phone": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "name": "bhome",
+  "version": "1.0.0",
+  "description": "Bhome - Thongbn",
+  "main": "index.js",
+  "author": "Thongbn",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "yarn run prod",
+    "server": "node ./dist-server/bin/www",
+    "transpile": "babel ./server --out-dir dist-server",
+    "clean": "rimraf dist-server",
+    "build": "npm-run-all clean transpile",
+    "dev": "npm-run-all build server",
+    "prod": "npm-run-all build server",
+    "watch:dev": "nodemon"
+  },
+  "nodemonConfig": {
+    "exec": "npm run dev",
+    "watch": ["server/*", "public/*"],
+    "ignore": ["**/__tests__/**", "*.test.js", "*.spec.js"]
+  },
+  "dependencies": {
+    "@babel/cli": "^7.18.9",
+    "@babel/core": "^7.18.9",
+    "@babel/preset-env": "^7.18.9",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "express-generator": "^4.16.1",
+    "express-handlebars": "^6.0.6",
+    "hbs": "~4.0.4",
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1",
+    "nodemon": "^2.0.19",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^3.0.2"
+  },
+  "babel": {
+    "presets": ["@babel/preset-env"]
+  }
+}

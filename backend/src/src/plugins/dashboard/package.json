@@ -1,0 +1,27 @@
+{
+  "name": "dashboard",
+  "version": "0.0.0",
+  "description": "This is the description of the plugin.",
+  "strapi": {
+    "name": "dashboard",
+    "description": "Description of dashboard plugin",
+    "kind": "plugin"
+  },
+  "dependencies": {
+    "recharts": "^2.1.10",
+    "moment": "^2.29.3"
+  },
+  "author": {
+    "name": "thongbn"
+  },
+  "maintainers": [
+    {
+      "name": "thongbn"
+    }
+  ],
+  "engines": {
+    "node": ">=12.x.x <=16.x.x",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT"
+}
