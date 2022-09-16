@@ -15,8 +15,12 @@ module.exports = createCoreController(moduleId, ({strapi}) => ({
       where: {slug},
       populate: {
         seo: true,
-        thumbnail: true,
-        cover: true
+        thumb: {
+          select: ['name', 'url', 'width', 'height']
+        },
+        cover: {
+          select: ['name', 'url', 'width', 'height']
+        }
       }
     });
     const sanitizedEntity = await this.sanitizeOutput(entity, ctx);

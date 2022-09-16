@@ -112,7 +112,6 @@ exports
 *.cache
 build
 .strapi-updater.json
-/config/database.js
 /.env
 /.strapi-updater.json
 !lib/*/build

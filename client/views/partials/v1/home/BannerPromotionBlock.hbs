@@ -1,20 +1,21 @@
-<!-- BANNER-SECTION START -->
-<div class="banner-section section pb-100">
-    <div class="container">
-        <!-- Banner Item Start -->
-        <div class="single-banner-2">
-            <img src="/v1/img/banner/3.jpg" alt="Image">
-            <div class="content">
-                <h1>pondo collection</h1>
-                <p>
-                    “Pondo Việt Nam hứa hẹn là “cầu nối vàng” đem đến những mẫu thiết kế vượt thời đại, những
-                    kiệt tác thời thượng nhất thế giới. Vẻ đẹp của một “tác phẩm nghệ thuật” thể hiện ở từng chi tiết nhỏ,
-                    là sự kết hợp hài hòa giữa màu sắc và chất liệu, tạo lên một không gian thẩm mỹ hoàn hảo..
-                </p>
-                <a href="#">xem thêm</a>
+{{#if homeData}}
+    {{#if homeData.aboutUsImage.data}}
+        <!-- BANNER-SECTION START -->
+        <div class="banner-section section pb-100">
+            <div class="container">
+                <!-- Banner Item Start -->
+                <div class="single-banner-2">
+                    <img src="{{resourceUrl homeData.aboutUsImage.data.attributes.url}}"
+                         alt="{{resourceUrl homeData.aboutUsImage.data.attributes.name}}">
+                    <div class="content">
+                        <h1>{{homeData.aboutUsTitle}}</h1>
+                        <p>{{{nl2br homeData.aboutUsDescription}}}</p>
+                        <a href="{{homeData.aboutUsLink}}">xem thêm</a>
+                    </div>
+                </div>
+                <!-- Banner Item End -->
             </div>
         </div>
-        <!-- Banner Item End -->
-    </div>
-</div>
-<!-- BANNER-SECTION END -->
+        <!-- BANNER-SECTION END -->
+    {{/if}}
+{{/if}}

@@ -1,0 +1,107 @@
+<div class="page-banner-section section">
+    <div class="container">
+        <div class="row">
+            <div class="page-banner-content col-xs-12">
+                <h2>Giới thiệu</h2>
+                <ul class="breadcrumb">
+                    <li><a href="/">Trang chủ</a></li>
+                    <li class="active"><a href="{{selfUrl}}">Về chúng tôi</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ABOUT SECTION START -->
+<div class="container">
+    <div class="row d-flex justify-content-center pt-80 pb-100">
+
+        <div class="col-lg-6 col-md-12 mb-30">
+            <div class="welcom-to-section">
+                <!-- TITLE START-->
+                <div class="left wt-small-separator-outer">
+                    <div class="wt-small-separator site-text-primary">
+                        <div class="sep-leaf-left"></div>
+                        <div>{{aboutUsData.companyName}}</div>
+                        <div class="sep-leaf-right"></div>
+                    </div>
+                </div>
+                <h2>{{aboutUsData.title}}</h2>
+                <p>{{{nl2br aboutUsData.shortDescription}}}</p>
+                {{#if aboutUsData.introList}}
+                    <ul class="site-list-style-one">
+                        {{#each aboutUsData.introList}}
+                            <li>{{this}}</li>
+                        {{/each}}
+                    </ul>
+                {{/if}}
+                <!-- TITLE END-->
+            </div>
+        </div>
+
+        <div class="col-lg-6 col-md-12 mb-30">
+            <div class="img-colarge2">
+                <div class="colarge-2 slide-right">
+                    <img src="{{resourceUrl aboutUsData.image1.data.attributes.url}}"
+                         alt="{{aboutUsData.image1.data.attributes.name}}">
+                </div>
+                <div class="colarge-2-1">
+                    <img src="{{resourceUrl aboutUsData.image2.data.attributes.url}}"
+                         alt="{{aboutUsData.image2.data.attributes.name}}">
+                </div>
+                <div class="since-year-outer2">
+                    <div class="since-year2"><span>Since</span><strong>{{aboutUsData.companyYear}}</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- ABOUT SECTION  SECTION END -->
+
+{{#if aboutUsData.features}}
+    <!-- ALL SERVICES START -->
+    <div class="section-full pt-80 pb-40 bg-no-repeat bg-center bg-cover"
+         style="background-image:url('/v1/img/aboutBg.jpg')">
+        <div class="container">
+            <div class="section-content">
+                <!-- TITLE START-->
+                <div class="section-head center wt-small-separator-outer text-center">
+                    <div class="wt-small-separator site-text-primary">
+                        <div class="sep-leaf-left"></div>
+                        <div style="color: #c8242c">{{aboutUsData.introSubTitle}}</div>
+                        <div class="sep-leaf-right"></div>
+                    </div>
+                    <h2>{{aboutUsData.introTitle}}</h2>
+                </div>
+                <!-- TITLE END-->
+                <div class="row d-flex justify-content-center pt-100">
+                    {{#each aboutUsData.features}}
+                        <div class="col-lg-4 col-md-6 col-sm-12 mb-50">
+                            <div class="service-border-box">
+                                <div class="wt-box service-box-1 bg-white">
+                                    <div class="service-box-title title-style-2 site-text-secondry">
+                                        <span class="s-title-one">{{title}}</span>
+                                        <!--                                    <span class="s-title-two">Gas Engineering</span>-->
+                                    </div>
+                                    <div class="service-box-content">
+                                        <p>{{description}}</p>
+                                        {{#if link}}
+                                            <a href="{{link}}" class="site-button-link">{{trans.DETAIL}}</a>
+                                        {{/if}}
+                                        <div class="wt-icon-number"><span>0{{plus @index 1}}</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ALL SERVICES SECTION END -->
+{{/if}}
+
+{{> home/StepsBlock}}
+

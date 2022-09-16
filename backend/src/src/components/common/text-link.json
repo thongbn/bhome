@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_common_text_links",
+  "info": {
+    "displayName": "TextLink",
+    "icon": "quote-right"
+  },
+  "options": {},
+  "attributes": {
+    "displayText": {
+      "type": "string"
+    },
+    "link": {
+      "type": "string"
+    }
+  }
+}

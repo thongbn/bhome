@@ -1,0 +1,33 @@
+<!-- SIDE BAR START -->
+<div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 rightSidebar  m-b30">
+    <aside class="side-bar">
+        <!-- CATEGORY -->
+        <div class="widget widget_services p-a20">
+            <div class="text-left m-b30">
+                <h3 class="widget-title">Danh mục</h3>
+            </div>
+            <ul>
+                <li><a href="/tuyen-dung">Công trình</a></li>
+                <li><a href="/san-pham">Sản phẩm</a></li>
+                <li><a href="/tin-tuc">Combo</a></li>
+            </ul>
+        </div>
+        <!-- Social -->
+        <div class="widget p-a20">
+            <div class="widget_social_inks">
+                <ul class="social-icons social-square social-darkest social-md">
+                    {{#if commonData.facebook}}
+                        <li><a href="{{commonData.facebook}}" class="fa fa-facebook"></a></li>
+                    {{/if}}
+                    {{#if commonData.youtube}}
+                        <li><a href="{{commonData.youtube}}" class="fa fa-youtube"></a></li>
+                    {{/if}}
+                    {{#if commonData.zalo}}
+                        <li><a href="{{commonData.zalo}}" class="fa">Zalo</a></li>
+                    {{/if}}
+                </ul>
+            </div>
+        </div>
+    </aside>
+</div>
+<!-- SIDE BAR END -->

@@ -1,25 +1,26 @@
 {
   "collectionName": "components_common_features",
   "info": {
-    "displayName": "feature",
-    "icon": "notes-medical",
-    "description": ""
+    "displayName": "Feature",
+    "icon": "check-circle"
   },
   "options": {},
   "attributes": {
+    "thumb": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
     "title": {
       "type": "string"
     },
-    "content": {
-      "type": "richtext"
-    },
-    "image": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images"
-      ]
+    "description": {
+      "type": "text"
     },
     "link": {
       "type": "string"

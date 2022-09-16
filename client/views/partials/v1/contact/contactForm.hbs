@@ -1,0 +1,24 @@
+<form id="contact-form" action="{{publicApi}}/contacts" method="post">
+    <div class="row">
+        <div class="col-md-4 col-12 mb-20">
+            <label for="name">Họ và tên</label>
+            <input id="name" name="name" type="text">
+        </div>
+        <div class="col-md-4 col-12 mb-20">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email">
+        </div>
+        <div class="col-md-4 col-12 mb-20">
+            <label for="phone">Số điện thoại</label>
+            <input id="phone" name="phone" type="text">
+        </div>
+        <div class="col-12 mb-20">
+            <label for="message">Ghi chú</label>
+            <textarea id="message" name="note"></textarea>
+        </div>
+        <div class="col-12">
+            <div class="form-message"></div>
+            <input type="submit" value="Gửi" id="contact-form-btn">
+        </div>
+    </div>
+</form>

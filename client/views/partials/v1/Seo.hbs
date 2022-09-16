@@ -1,11 +1,38 @@
 <!-- META -->
+{{#if seoData.metaTitle}}
+    <title>
+        {{seoData.metaTitle}}
+    </title>
+    <meta property="og:title" content="{{seoData.metaTitle}}" />
+    <meta name="twitter:title" content="{{seoData.metaTitle}}" />
+{{/if}}
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="keywords" content="" />
-<meta name="author" content="" />
-<meta name="robots" content="" />
-<meta name="description" content="" />
+{{#if seoData.keywords}}
+    <meta name="keywords" content="{{seoData.keywords}}" />
+{{/if}}
+{{#if seoData.metaRobots}}
+    <meta name="robots" content="{{seoData.metaRobots}}" />
+{{/if}}
+{{#if seoData.metaDescription}}
+    <meta name="description" content="{{seoData.metaDescription}}" />
+    <meta property="og:description" content="{{seoData.metaDescription}}" />
+{{/if}}
+{{#if seoData.canonicalURL}}
+    <link rel="canonical" href="{{seoData.canonicalURL}}" />
+{{/if}}
+{{#if seoData.structuredData}}
+    <script type="application/ld+json">
+      {{seoData.structuredData}}
+    </script>
+{{/if}}
+{{#if seoData.metaImage}}
+    <meta property="og:image" content="{{resourceUrl seoData.metaImage.url}}" />
+    <meta name="twitter:image" content="{{resourceUrl seoData.metaImage.url}}" />
+{{/if}}
+
+
 
 <!-- FAVICONS ICON -->
 <link rel="icon" href="/images/favicon.html" type="image/x-icon" />

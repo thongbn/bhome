@@ -1,0 +1,61 @@
+<!-- PAGE BANNER SECTION -->
+<div class="page-banner-section section">
+    <div class="container">
+        <div class="row">
+            <div class="page-banner-content col-xs-12">
+                <h2>Blog</h2>
+                <ul class="breadcrumb">
+                    <li><a href="/">Trang chủ</a></li>
+                    <li><a href="/cong-trinh">Công trình</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END PAGE BANNER SECTION -->
+<!-- PAGE SECTION START -->
+<div class="page-section section pt-100 pb-60">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-9 col-lg-8 col-12">
+                <!-- Single Blog Post -->
+                <div class="single-blog-post">
+                    {{#if articleData.attributes.cover}}
+                        <div class="blog-img">
+                            <img src="{{resourceUrl articleData.attributes.cover.data.attributes.url}}"
+                                 alt="{{articleData.attributes.cover.data.attributes.name}}">
+                        </div>
+                    {{/if}}
+                    <div class="blog-info">
+                        <h3 class="title">{{articleData.attributes.title}}</h3>
+                        <div class="blog-meta">
+                            <span><i class="fa fa-calendar"></i> {{moment attributes.createdAt "DD-MM-YYYY"}}</span>
+                        </div>
+                        {{{articleData.attributes.content}}}
+                    </div>
+                </div>
+                <div class="contact-form mt-40 mb-40">
+                    <h3>Liên hệ ngay</h3>
+                    {{> contact/contactForm}}
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-12">
+                <div class="single-sidebar mb-40">
+                    <form action="/cong-trinh" class="sidebar-search" method="get">
+                        <input type="text" name="s" placeholder="Search here...">
+                        <button class="submit"><i class="pe-7s-search"></i></button>
+                    </form>
+                </div>
+                <div class="single-sidebar mb-40">
+                    <h3 class="sidebar-title">Danh mục</h3>
+                    <ul class="category-sidebar">
+                        <li><a href="/cong-trinh">Công trình</a></li>
+                        <li><a href="/san-pham">Sản phẩm</a></li>
+                        <li><a href="/combo">Combo</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- PAGE SECTION END -->

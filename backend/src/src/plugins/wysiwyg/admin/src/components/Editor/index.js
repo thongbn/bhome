@@ -1,10 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import { CKEditor } from "@ckeditor/ckeditor5-react";
-import CustomEditor  from 'custom-editor/build/ckeditor'
+import {CKEditor} from "@ckeditor/ckeditor5-react";
+// import CustomEditor  from 'custom-editor/build/ckeditor'
+import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 // import DecoupledEditor from '../../../../../../../node_modules/@ckeditor/ckeditor5-build-decoupled-document';
-import { Box } from "@strapi/design-system/Box";
+import {Box} from "@strapi/design-system/Box";
 
 const Wrapper = styled(Box)`
   .ck-editor__main {
@@ -13,6 +14,26 @@ const Wrapper = styled(Box)`
       min-height: ${200 / 16}em;
     }
     // Since Strapi resets css styles, it can be configured here (h2, h3, strong, i, ...)
+    h1, h2, h3, h4, h5, h6{
+      font-weight: bold;
+    }
+    
+    h2{
+      font-size: 1.5em;
+    }
+    
+    h3{
+      font-size: 1.17em;
+    }
+    
+    ul {
+      list-style: circle inside;
+    }
+    
+    ol {
+        list-style: numbered inside;
+    }
+    
     strong,b{
       font-weight: 600
     }
@@ -40,18 +61,18 @@ const configuration = {
   shouldNotGroupWhenFull: true
 };
 
-const Editor = ({ onChange, name, value, disabled }) => {
+const Editor = ({onChange, name, value, disabled}) => {
   return (
     <Wrapper>
       <CKEditor
-        editor={CustomEditor}
+        editor={ClassicEditor}
         disabled={disabled}
         config={configuration}
         data={value || ""}
         onReady={(editor) => editor.setData(value || "")}
         onChange={(event, editor) => {
           const data = editor.getData();
-          onChange({ target: { name, value: data } });
+          onChange({target: {name, value: data}});
         }}
       />
     </Wrapper>

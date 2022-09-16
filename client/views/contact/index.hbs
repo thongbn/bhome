@@ -1,0 +1,52 @@
+<!-- PAGE SECTION START -->
+<div class="page-section section pt-100 pb-100">
+    <div class="container">
+        <div class="row">
+            <div class="contact-info col-lg-4 col-12 mb-40">
+                <h3>Contact Info</h3>
+
+                <p><i class="pe-7s-map-marker"></i>{{commonData.address}}</span>
+                </p>
+
+                <p><i class="pe-7s-call"></i><span>Điện thoại : {{commonData.phone}}</span></p>
+
+                <p><i class="pe-7s-mail"></i><a href="mailto:{{commonData.email}}">{{commonData.email}}</a></p>
+
+                <div class="contact-social">
+                    {{#if commonData.facebook}}
+                        <a href="{{commonData.facebook}}" target="_blank" rel="noopener">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    {{/if}}
+                    {{#if commonData.facebook}}
+                        <a href="{{commonData.zalo}}" target="_blank" rel="noopener">
+                            Zalo
+                        </a>
+                    {{/if}}
+                    {{#if commonData.youtube}}
+                        <a href="{{commonData.youtube}}" target="_blank" rel="noopener">
+                            <i class="fa fa-youtube"></i>
+                        </a>
+                    {{/if}}
+                </div>
+
+            </div>
+            <div class="contact-form col-lg-8 col-12 mb-40">
+                <h3>Contact form</h3>
+                {{> contact/contactForm}}
+            </div>
+            <div class="col-12 mt-40">
+                {{#if commonData.googleMapLink}}
+                    <!-- Google Map Area Start -->
+                    <div class="contact-map">
+                        <iframe src="{{commonData.googleMapLink}}" style="border:0;" allowfullscreen=""
+                                loading="lazy"></iframe>
+                    </div>
+                    <!-- End of Google Map Area -->
+                {{/if}}
+            </div>
+        </div>
+        {{> home/StepsBlock}}
+    </div>
+</div>
+<!-- PAGE SECTION END -->

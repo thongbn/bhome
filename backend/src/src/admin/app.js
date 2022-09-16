@@ -1,15 +1,15 @@
 import viTranslate from "./extensions/translations/vi.json";
 import enTranslate from "./extensions/translations/en.json";
-import nanoLogo from"./extensions/nano_logo.png";
-import nanoMenuLogo from"./extensions/nano_logo_sm.png";
+import authLogo from"./extensions/AuthLogo.png";
+import menuLogo from"./extensions/AdminLogo.png";
 
 export default {
   config: {
     auth:{
-      logo: nanoLogo
+      logo: authLogo
     },
     menu: {
-      logo: nanoMenuLogo
+      logo: menuLogo
     },
     // head: {
     //    favicon: "

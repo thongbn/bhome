@@ -12,26 +12,17 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "fullname": {
-      "type": "string",
-      "required": true
+    "name": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
     },
     "email": {
       "type": "email"
     },
-    "mobile": {
-      "type": "string"
-    },
-    "customer": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::customer.customer"
-    },
-    "description": {
+    "note": {
       "type": "text"
-    },
-    "title": {
-      "type": "string"
     }
   }
 }

@@ -1,0 +1,89 @@
+<div class="page-banner-section section">
+    <div class="container">
+        <div class="row">
+            <div class="page-banner-content col-xs-12">
+                <h2>Blog</h2>
+                <ul class="breadcrumb">
+                    <li><a href="/">Trang chủ</a></li>
+                    <li class="active"><a href="{{selfUrl}}">{{title}}</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="page-section section pt-100 pb-60">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-9 col-lg-8 col-12">
+                <div class="row two-column">
+                    {{#each articleData}}
+                        <!-- blog-item start -->
+                        <div class="col-md-6 col-12 mb-40">
+                            <div class="blog-item">
+                                {{#if attributes.thumb}}
+                                    <a class="image" href="/cong-trinh/{{attributes.slug}}">
+                                        <img src="{{resourceUrl attributes.thumb.data.attributes.url}}"
+                                             alt="{{attributes.thumb.data.attributes.name}}">
+                                    </a>
+                                {{/if}}
+                                <div class="blog-dsc">
+                                    <span class="date">{{moment attributes.createdAt "DD-MM-YYYY"}}</span>
+                                    <h4 class="title">
+                                        <a href="/cong-trinh/{{attributes.slug}}">
+                                            {{attributes.title}}
+                                        </a>
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- blog-item end -->
+                    {{/each}}
+
+                    {{#if articleMeta}}
+                        {{#if articleMeta.pagination}}
+                            <!-- product-item end -->
+                            <div class="page-pagination text-center col-12 fix mb-40">
+                                <ul>
+                                    {{#compare articleMeta.pagination.page ">" 1}}
+                                        <li>
+                                            <a href="/cong-trinh?{{../queryParams}}&page={{add
+                                                ../articleMeta.pagination.page -1}}">
+                                            <i class="fa fa-angle-left"></i>
+                                            </a>
+                                        </li>
+                                    {{/compare}}
+                                    <li class="active"><a href="#">{{articleMeta.pagination.page}}</a></li>
+                                    {{#compare articleMeta.pagination.page "<" articleMeta.pagination.pageCount}}
+                                        <li>
+                                            <a href="/cong-trinh?{{../queryParams}}&page={{add
+                                                ../articleMeta.pagination.page 1}}">
+                                            <i class="fa fa-angle-right"/>
+                                            </a>
+                                        </li>
+                                    {{/compare}}
+                                </ul>
+                            </div>
+                        {{/if}}
+                    {{/if}}
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-12">
+                <div class="single-sidebar mb-40">
+                    <form action="/cong-trinh" class="sidebar-search" method="get">
+                        <input type="text" name="s" placeholder="Tìm kiếm...">
+                        <button class="submit"><i class="pe-7s-search"></i></button>
+                    </form>
+                </div>
+                <div class="single-sidebar mb-40">
+                    <h3 class="sidebar-title">Danh mục</h3>
+                    <ul class="category-sidebar">
+                        <li><a href="/cong-trinh">Công trình</a></li>
+                        <li><a href="/san-pham">Sản phẩm</a></li>
+                        <li><a href="/combo">Combo</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        {{> home/StepsBlock}}
+    </div>
+</div>

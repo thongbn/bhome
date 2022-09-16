@@ -13,18 +13,18 @@ module.exports = ({env}) => ({
   'ezforms': {
     disabled: true
   },
-  'dashboard': {
-    enabled: true,
-    resolve: './src/plugins/dashboard'
-  },
-  'get-fly': {
-    enabled: true,
-    resolve: './src/plugins/get-fly'
-  },
-  'export-data': {
-    enabled: true,
-    resolve: './src/plugins/export-data'
-  },
+  // 'dashboard': {
+  //   enabled: true,
+  //   resolve: './src/plugins/dashboard'
+  // },
+  // 'get-fly': {
+  //   enabled: true,
+  //   resolve: './src/plugins/get-fly'
+  // },
+  // 'export-data': {
+  //   enabled: true,
+  //   resolve: './src/plugins/export-data'
+  // },
   email: {
     config: {
       provider: 'sendgrid',

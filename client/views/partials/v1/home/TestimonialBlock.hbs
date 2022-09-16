@@ -1,36 +1,26 @@
-<!-- TESTIMONIAL SECTION START -->
-<div class="section">
-    <div class="container">
-        <div class="testimonial-section pt-100 pb-100">
-            <div class="row">
-                <div class="col-lg-10 offset-lg-1 col-12">
-                    <!-- Testimonial Slider -->
-                    <div class="testimonial-slider text-center">
-                        <!-- Single Testimonial -->
-                        <div class="single-testimonial">
-                            <img src="/v1/img/testimonial/1.png" alt="Image">
-                            <p>“ Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram. ”</p>
-                            <i class="pe-7s-way"></i>
-                            <h5>Grace Kelly</h5>
-                        </div>
-                        <!-- Single Testimonial -->
-                        <div class="single-testimonial">
-                            <img src="/v1/img/testimonial/2.png" alt="Image">
-                            <p>“ Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram. ”</p>
-                            <i class="pe-7s-way"></i>
-                            <h5>Diane Stevens</h5>
-                        </div>
-                        <!-- Single Testimonial -->
-                        <div class="single-testimonial">
-                            <img src="/v1/img/testimonial/3.png" alt="Image">
-                            <p>“ Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram. ”</p>
-                            <i class="pe-7s-way"></i>
-                            <h5>Mary Harper</h5>
+{{#if homeData.testimonials}}
+    <!-- TESTIMONIAL SECTION START -->
+    <div class="section">
+        <div class="container">
+            <div class="testimonial-section pt-100 pb-100">
+                <div class="row">
+                    <div class="col-lg-10 offset-lg-1 col-12">
+                        <!-- Testimonial Slider -->
+                        <div class="testimonial-slider text-center">
+                            {{#each homeData.testimonials}}
+                                <!-- Single Testimonial -->
+                                <div class="single-testimonial">
+                                    <img src="{{resourceUrl img.data.attributes.url}}" alt="{{img.data.attributes.name}}">
+                                    <p>“{{{nl2br description}}}”</p>
+                                    <i class="pe-7s-way"></i>
+                                    <h5>{{name}}</h5>
+                                </div>
+                            {{/each}}
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<!-- TESTIMONIAL SECTION END -->
+    <!-- TESTIMONIAL SECTION END -->
+{{/if}}

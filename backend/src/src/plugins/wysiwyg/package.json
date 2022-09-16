@@ -7,7 +7,9 @@
     "description": "Description of wysiwyg plugin",
     "kind": "plugin"
   },
-  "dependencies": {},
+  "dependencies": {
+
+  },
   "author": {
     "name": "A Strapi developer"
   },

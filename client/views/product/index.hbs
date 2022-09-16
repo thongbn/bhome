@@ -1,0 +1,212 @@
+<div class="page-banner-section section">
+    <div class="container">
+        <div class="row">
+            <div class="page-banner-content col-xs-12">
+                <h2>Sản phẩm</h2>
+                <ul class="breadcrumb">
+                    <li><a href="/">Trang chủ</a></li>
+                    <li class="active"><a href="{{selfUrl}}">Sản phẩm</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="page-section section pt-100 pb-60">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-9 col-lg-8 col-12">
+                <div class="shop-bar mb-6">
+                    <ul class="shop-tablist nav">
+                        <li><a class="active" href="#product-grid" data-bs-toggle="tab"><i class="fa fa-th"></i></a>
+                        </li>
+                        <li><a href="#product-list" data-bs-toggle="tab"><i class="fa fa-list"></i></a></li>
+                    </ul>
+                </div>
+                <div class="tab-content section">
+                    <div class="tab-pane active" id="product-grid">
+                        <div class="row">
+                            {{#each productData}}
+                                <!-- product-item start -->
+                                <div class="col-xl-4 col-lg-6 col-md-4 col-sm-6 col-12 mb-8">
+                                    <div class="product-item text-center">
+                                        {{#if attributes.thumb}}
+                                            <div class="product-img">
+                                                <a class="image" href="/san-pham/{{attributes.slug}}">
+                                                    <img src="{{resourceUrl attributes.thumb.data.attributes.url}}"
+                                                         alt="{{attributes.thumb.data.attributes.name}}">
+                                                </a>
+                                                <a href="/" class="add-to-cart">Xem thêm</a>
+                                            </div>
+                                        {{/if}}
+                                        <div class="product-info">
+                                            <h5 class="title">
+                                                <a href="/san-pham/{{attributes.slug}}">{{attributes.name}}</a>
+                                            </h5>
+                                            <span class="price">
+                                                {{#if attributes.salePrice}}
+                                                    <span class="new">{{attributes.salePrice}} VND</span>
+                                                    <span class="old">{{attributes.price}} VND</span>
+                                                {{else}}
+                                                    <span class="new">{{attributes.price}} VND</span>
+                                                {{/if}}
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- product-item end -->
+                            {{/each}}
+                            {{#if productMeta}}
+                                {{#if productMeta.pagination}}
+                                    <!-- product-item end -->
+                                    <div class="page-pagination text-center col-12 fix mb-40">
+                                        <ul>
+                                            {{#compare productMeta.pagination.page ">" 1}}
+                                                <li>
+                                                    <a href="/san-pham?{{../queryParams}}&page={{add
+                                                        ../productMeta.pagination.page -1}}">
+                                                    <i class="fa fa-angle-left"></i>
+                                                    </a>
+                                                </li>
+                                            {{/compare}}
+                                            <li class="active"><a href="#">{{productMeta.pagination.page}}</a></li>
+                                            {{#compare productMeta.pagination.page "<"
+                                                       productMeta.pagination.pageCount}}
+                                                <li>
+                                                    <a href="/san-pham?{{../queryParams}}&page={{add
+                                                        ../productMeta.pagination.page 1}}">
+                                                    <i class="fa fa-angle-right"/>
+                                                    </a>
+                                                </li>
+                                            {{/compare}}
+                                        </ul>
+                                    </div>
+                                {{/if}}
+                            {{/if}}
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="product-list">
+                        <div class="row">
+                            {{#each productData}}
+                                <!-- list product-item start -->
+                                <div class="col-xs-12 mb-40">
+                                    <div class="list-product-item">
+                                        {{#if attributes.thumb}}
+                                            <div class="list-product-img">
+                                                <a class="image" href="/san-pham/{{attributes.slug}}">
+                                                    <img src="{{resourceUrl attributes.thumb.data.attributes.url}}"
+                                                         alt="{{attributes.thumb.data.attributes.name}}">
+                                                </a>
+                                            </div>
+                                        {{/if}}
+                                        <div class="list-product-info fix">
+                                            <h2 class="title">
+                                                <a href="/san-pham/{{attributes.slug}}">
+                                                    {{attributes.name}}
+                                                </a>
+                                            </h2>
+                                            <span class="price">
+                                                {{#if attributes.salePrice}}
+                                                    <span class="new">{{attributes.salePrice}} VND</span>
+                                                    <span class="old">{{attributes.price}} VND</span>
+                                                {{else}}
+                                                    <span class="new">{{attributes.price}} VND</span>
+                                                {{/if}}
+                                            </span>
+                                            <p>{{attributes.shortDescription}}</p>
+                                            <div class="list-action-btn fix">
+                                                <a href="{{resourceUrl attributes.thumb.data.attributes.url}}"
+                                                   class="add-to-cart">
+                                                    Xem thêm
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- list product-item end -->
+                            {{/each}}
+                            {{#if productMeta}}
+                                {{#if productMeta.pagination}}
+                                    <!-- product-item end -->
+                                    <div class="page-pagination text-center col-12 fix mb-40">
+                                        <ul>
+                                            {{#compare productMeta.pagination.page ">" 1}}
+                                                <li>
+                                                    <a href="/san-pham?{{../queryParams}}&page={{add
+                                                        ../productMeta.pagination.page -1}}">
+                                                    <i class="fa fa-angle-left"></i>
+                                                    </a>
+                                                </li>
+                                            {{/compare}}
+                                            <li class="active"><a href="#">{{productMeta.pagination.page}}</a></li>
+                                            {{#compare productMeta.pagination.page "<"
+                                                       productMeta.pagination.pageCount}}
+                                                <li>
+                                                    <a href="/san-pham?{{../queryParams}}&page={{add
+                                                        ../productMeta.pagination.page 1}}">
+                                                    <i class="fa fa-angle-right"/>
+                                                    </a>
+                                                </li>
+                                            {{/compare}}
+                                        </ul>
+                                    </div>
+                                {{/if}}
+                            {{/if}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-12">
+
+                <div class="single-sidebar mb-8">
+                    <form action="/san-pham" class="sidebar-search">
+                        <input type="text" name="s" placeholder="Tìm kiếm ...">
+                        <button class="submit"><i class="pe-7s-search"></i></button>
+                    </form>
+                </div>
+
+                <div class="single-sidebar mb-8">
+                    <h3 class="sidebar-title">Danh mục</h3>
+                    <ul class="category-sidebar">
+                        <li><a href="/san-pham">Tất cả</a></li>
+                        {{#each productTypes}}
+                            <li><a href="/san-pham?type={{key}}">{{displayText}}</a></li>
+                        {{/each}}
+                    </ul>
+                </div>
+
+<!--                <div class="single-sidebar mb-8">-->
+<!--                    <h3 class="sidebar-title">Category</h3>-->
+<!--                    <div id="price-range"></div>-->
+<!--                </div>-->
+
+<!--                <div class="single-sidebar mb-8">-->
+<!--                    <h3 class="sidebar-title">Color</h3>-->
+<!--                    <ul class="color-sidebar">-->
+<!--                        <li><a href="shop.html"><i style="background-color: #0000FF;"></i><span>blue</span></a></li>-->
+<!--                        <li><a href="shop.html"><i style="background-color: #DCDCDA;"></i><span>gray</span></a></li>-->
+<!--                        <li><a href="shop.html"><i style="background-color: #855439;"></i><span>brown</span></a></li>-->
+<!--                        <li><a href="shop.html"><i style="background-color: #50B948;"></i><span>green</span></a></li>-->
+<!--                        <li><a href="shop.html"><i style="background-color: #FF0000;"></i><span>red</span></a></li>-->
+<!--                        <li><a href="shop.html"><i style="background-color: #FF6801;"></i><span>orange</span></a></li>-->
+<!--                        <li><a href="shop.html"><i style="background-color: #000000;"></i><span>black</span></a></li>-->
+<!--                    </ul>-->
+<!--                </div>-->
+
+<!--                <div class="single-sidebar mb-8">-->
+<!--                    <h3 class="sidebar-title">Popular Tags</h3>-->
+<!--                    <div class="tag-cloud">-->
+<!--                        <a href="shop.html">Chairs</a>-->
+<!--                        <a href="shop.html">Tables</a>-->
+<!--                        <a href="shop.html">Sofas</a>-->
+<!--                        <a href="shop.html">Lights</a>-->
+<!--                        <a href="shop.html">Lamps</a>-->
+<!--                        <a href="shop.html">curtains</a>-->
+<!--                        <a href="shop.html">cabinets</a>-->
+<!--                    </div>-->
+<!--                </div>-->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- PAGE SECTION END -->

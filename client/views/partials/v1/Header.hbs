@@ -3,7 +3,10 @@
     <div class="container">
         <!-- logo -->
         <div class="header-logo float-start">
-            <a href="#"><img src="/v1/img/logo-bhome-red-xs.png" alt="main logo"></a>
+            <a href="#">
+                <img src="{{resourceUrl commonData.logo.data.attributes.url}}"
+                     alt="{{commonData.logo.data.attributes.name}}">
+            </a>
         </div>
         <!-- header-search & total-cart -->
         <div class="float-end">
@@ -11,75 +14,75 @@
             </div>
             <nav class="main-menu menu-right float-end">
                 <ul>
-<!--                    <li class="active"><a href="index.html">Home</a>-->
-<!--                        <ul class="sub-menu">-->
-<!--                            <li><a href="index.html">Home one</a></li>-->
-<!--                            <li class="active"><a href="index-2.html">Home two</a></li>-->
-<!--                            <li><a href="index-3.html">Home three</a></li>-->
-<!--                            <li><a href="index-4.html">Home four</a></li>-->
-<!--                        </ul>-->
-<!--                    </li>-->
-<!--                    <li><a href="shop.html">shop</a>-->
-<!--                        <ul class="mega-menu">-->
-<!--                            <li><a href="shop-list-right-sidebar.html">Chair</a>-->
-<!--                                <ul>-->
-<!--                                    <li><a href="shop.html">Tops</a></li>-->
-<!--                                    <li><a href="shop-list-right-sidebar.html">Bras &amp; Tanks</a></li>-->
-<!--                                    <li><a href="shop-list.html">Trousers</a></li>-->
-<!--                                    <li><a href="shop-right-sidebar.html">Hoodies &amp; Sweatshirts</a></li>-->
-<!--                                    <li><a href="shop.html">Tees</a></li>-->
-<!--                                    <li><a href="shop-list.html">Jackets</a></li>-->
-<!--                                </ul>-->
-<!--                            </li>-->
-<!--                            <li><a href="shop-list.html">Table</a>-->
-<!--                                <ul>-->
-<!--                                    <li><a href="shop.html">Tops</a></li>-->
-<!--                                    <li><a href="shop-list-right-sidebar.html">Bras &amp; Tanks</a></li>-->
-<!--                                    <li><a href="shop-list.html">Trousers</a></li>-->
-<!--                                    <li><a href="shop-right-sidebar.html">Hoodies &amp; Sweatshirts</a></li>-->
-<!--                                    <li><a href="shop.html">Tees</a></li>-->
-<!--                                    <li><a href="shop-list.html">Jackets</a></li>-->
-<!--                                </ul>-->
-<!--                            </li>-->
-<!--                            <li><a href="shop-right-sidebar.html">Cabinet</a>-->
-<!--                                <ul>-->
-<!--                                    <li><a href="shop.html">Tops</a></li>-->
-<!--                                    <li><a href="shop-list-right-sidebar.html">Bras &amp; Tanks</a></li>-->
-<!--                                    <li><a href="shop-list.html">Trousers</a></li>-->
-<!--                                    <li><a href="shop-right-sidebar.html">Hoodies &amp; Sweatshirts</a></li>-->
-<!--                                    <li><a href="shop.html">Tees</a></li>-->
-<!--                                    <li><a href="shop-list.html">Jackets</a></li>-->
-<!--                                </ul>-->
-<!--                            </li>-->
-<!--                        </ul>-->
-<!--                    </li>-->
-                    <li><a href="#">Trang chủ</a></li>
-                    <li><a href="#">Giới thiệu</a></li>
-                    <li><a href="#">Công trình</a></li>
-                    <li><a href="#">Sản phẩm</a></li>
-                    <li><a href="#">Combo</a></li>
-<!--                    <li><a href="#">Pages</a>-->
-<!--                        <ul class="sub-menu">-->
-<!--                            <li><a href="cart.html">cart</a></li>-->
-<!--                            <li><a href="checkout.html">checkout</a></li>-->
-<!--                            <li><a href="contact.html">contact</a></li>-->
-<!--                            <li><a href="login.html">login</a></li>-->
-<!--                            <li><a href="product-details.html">product details</a></li>-->
-<!--                            <li><a href="register.html">register</a></li>-->
-<!--                            <li><a href="shop.html">shop</a></li>-->
-<!--                            <li><a href="shop-list.html">shop list</a></li>-->
-<!--                            <li><a href="shop-list-right-sidebar.html">shop list right sidebar</a></li>-->
-<!--                            <li><a href="shop-right-sidebar.html">shop right sidebar</a></li>-->
-<!--                            <li><a href="wishlist.html">wishlist</a></li>-->
-<!--                        </ul>-->
-<!--                    </li>-->
-<!--                    <li><a href="blog.html">Blog</a>-->
-<!--                        <ul class="sub-menu">-->
-<!--                            <li><a href="blog.html">blog</a></li>-->
-<!--                            <li><a href="blog-details.html">blog details</a></li>-->
-<!--                        </ul>-->
-<!--                    </li>-->
-                    <li><a href="contact.html">Contact</a></li>
+                    <!--                    <li class="active"><a href="index.html">Home</a>-->
+                    <!--                        <ul class="sub-menu">-->
+                    <!--                            <li><a href="index.html">Home one</a></li>-->
+                    <!--                            <li class="active"><a href="index-2.html">Home two</a></li>-->
+                    <!--                            <li><a href="index-3.html">Home three</a></li>-->
+                    <!--                            <li><a href="index-4.html">Home four</a></li>-->
+                    <!--                        </ul>-->
+                    <!--                    </li>-->
+                    <!--                    <li><a href="shop.html">shop</a>-->
+                    <!--                        <ul class="mega-menu">-->
+                    <!--                            <li><a href="shop-list-right-sidebar.html">Chair</a>-->
+                    <!--                                <ul>-->
+                    <!--                                    <li><a href="shop.html">Tops</a></li>-->
+                    <!--                                    <li><a href="shop-list-right-sidebar.html">Bras &amp; Tanks</a></li>-->
+                    <!--                                    <li><a href="shop-list.html">Trousers</a></li>-->
+                    <!--                                    <li><a href="shop-right-sidebar.html">Hoodies &amp; Sweatshirts</a></li>-->
+                    <!--                                    <li><a href="shop.html">Tees</a></li>-->
+                    <!--                                    <li><a href="shop-list.html">Jackets</a></li>-->
+                    <!--                                </ul>-->
+                    <!--                            </li>-->
+                    <!--                            <li><a href="shop-list.html">Table</a>-->
+                    <!--                                <ul>-->
+                    <!--                                    <li><a href="shop.html">Tops</a></li>-->
+                    <!--                                    <li><a href="shop-list-right-sidebar.html">Bras &amp; Tanks</a></li>-->
+                    <!--                                    <li><a href="shop-list.html">Trousers</a></li>-->
+                    <!--                                    <li><a href="shop-right-sidebar.html">Hoodies &amp; Sweatshirts</a></li>-->
+                    <!--                                    <li><a href="shop.html">Tees</a></li>-->
+                    <!--                                    <li><a href="shop-list.html">Jackets</a></li>-->
+                    <!--                                </ul>-->
+                    <!--                            </li>-->
+                    <!--                            <li><a href="shop-right-sidebar.html">Cabinet</a>-->
+                    <!--                                <ul>-->
+                    <!--                                    <li><a href="shop.html">Tops</a></li>-->
+                    <!--                                    <li><a href="shop-list-right-sidebar.html">Bras &amp; Tanks</a></li>-->
+                    <!--                                    <li><a href="shop-list.html">Trousers</a></li>-->
+                    <!--                                    <li><a href="shop-right-sidebar.html">Hoodies &amp; Sweatshirts</a></li>-->
+                    <!--                                    <li><a href="shop.html">Tees</a></li>-->
+                    <!--                                    <li><a href="shop-list.html">Jackets</a></li>-->
+                    <!--                                </ul>-->
+                    <!--                            </li>-->
+                    <!--                        </ul>-->
+                    <!--                    </li>-->
+                    <li><a href="/">Trang chủ</a></li>
+                    <li><a href="/gioi-thieu">Giới thiệu</a></li>
+                    <li><a href="/cong-trinh">Công trình</a></li>
+                    <li><a href="/san-pham">Sản phẩm</a></li>
+                    <li><a href="/san-pham?type=Combo">Combo</a></li>
+                    <!--                    <li><a href="#">Pages</a>-->
+                    <!--                        <ul class="sub-menu">-->
+                    <!--                            <li><a href="cart.html">cart</a></li>-->
+                    <!--                            <li><a href="checkout.html">checkout</a></li>-->
+                    <!--                            <li><a href="contact.html">contact</a></li>-->
+                    <!--                            <li><a href="login.html">login</a></li>-->
+                    <!--                            <li><a href="product-details.html">product details</a></li>-->
+                    <!--                            <li><a href="register.html">register</a></li>-->
+                    <!--                            <li><a href="shop.html">shop</a></li>-->
+                    <!--                            <li><a href="shop-list.html">shop list</a></li>-->
+                    <!--                            <li><a href="shop-list-right-sidebar.html">shop list right sidebar</a></li>-->
+                    <!--                            <li><a href="shop-right-sidebar.html">shop right sidebar</a></li>-->
+                    <!--                            <li><a href="wishlist.html">wishlist</a></li>-->
+                    <!--                        </ul>-->
+                    <!--                    </li>-->
+                    <!--                    <li><a href="blog.html">Blog</a>-->
+                    <!--                        <ul class="sub-menu">-->
+                    <!--                            <li><a href="blog.html">blog</a></li>-->
+                    <!--                            <li><a href="blog-details.html">blog details</a></li>-->
+                    <!--                        </ul>-->
+                    <!--                    </li>-->
+                    <li><a href="/lien-he">Liên hệ</a></li>
                 </ul>
             </nav>
         </div>
