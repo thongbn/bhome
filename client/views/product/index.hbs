@@ -45,10 +45,10 @@
                                             </h5>
                                             <span class="price">
                                                 {{#if attributes.salePrice}}
-                                                    <span class="new">{{attributes.salePrice}} VND</span>
-                                                    <span class="old">{{attributes.price}} VND</span>
+                                                    <span class="new">{{addCommas attributes.salePrice}} VND</span>
+                                                    <span class="old">{{addCommas attributes.price}} VND</span>
                                                 {{else}}
-                                                    <span class="new">{{attributes.price}} VND</span>
+                                                    <span class="new">{{addCommas attributes.price}} VND</span>
                                                 {{/if}}
                                             </span>
                                         </div>
@@ -107,10 +107,10 @@
                                             </h2>
                                             <span class="price">
                                                 {{#if attributes.salePrice}}
-                                                    <span class="new">{{attributes.salePrice}} VND</span>
-                                                    <span class="old">{{attributes.price}} VND</span>
+                                                    <span class="new">{{addCommas attributes.salePrice}} VND</span>
+                                                    <span class="old">{{addCommas attributes.price}} VND</span>
                                                 {{else}}
-                                                    <span class="new">{{attributes.price}} VND</span>
+                                                    <span class="new">{{addCommas attributes.price}} VND</span>
                                                 {{/if}}
                                             </span>
                                             <p>{{attributes.shortDescription}}</p>
