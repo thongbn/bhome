@@ -4,7 +4,7 @@ import qs from 'qs';
 
 export const callGet = async (path, params, locale) => {
     console.log("Call get:", path, params, locale);
-    if(!locale){
+    if (!locale) {
         locale = process.env.DEFAULT_LANGUAGE;
     }
 
@@ -52,19 +52,14 @@ export const seoPopulate = () => {
 };
 
 export const createSeoData = (req, seoOptional) => {
-    const commonData = req.app.locals.commonData;
-    const {seo} = commonData;
+    const seo = req.app.locals.seoData;
 
     if (!seo) {
         return {}
     }
 
     if (!seoOptional) {
-        return {
-            ...seo,
-            structuredData: seo.structuredData ? JSON.stringify(seo.structuredData) : null,
-            metaImage: seo.metaImage ? seo.metaImage.data.attributes : null
-        };
+        return seo;
     }
 
     let seoFinal = {
@@ -72,9 +67,18 @@ export const createSeoData = (req, seoOptional) => {
         ...seoOptional
     };
 
+    let metaImage = null;
+    if (seoFinal.metaImage) {
+        if (seoFinal.metaImage.url) {
+            metaImage = seoFinal.metaImage;
+        } else if (seoFinal.metaImage.data) {
+            metaImage = seoFinal.metaImage.data.attributes;
+        }
+    }
+
     return {
         ...seoFinal,
         structuredData: seoFinal.structuredData ? JSON.stringify(seoFinal.structuredData) : null,
-        metaImage: seoFinal.metaImage ? seoFinal.metaImage.data.attributes : null
+        metaImage
     }
 };
