@@ -959,7 +959,7 @@ input:focus, textarea:focus {
     float: left;
     position: relative;
     width: 100%;
-    z-index: 99999;
+    z-index: 2;
 }
 
 .header-transparent {

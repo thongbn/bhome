@@ -4,7 +4,7 @@
  * product controller
  */
 
-const { createCoreController } = require('@strapi/strapi').factories;
+const {createCoreController} = require('@strapi/strapi').factories;
 
 const moduleId = "api::product.product";
 
@@ -20,7 +20,11 @@ module.exports = createCoreController(moduleId, ({strapi}) => ({
         },
         thumb: {
           select: ['name', 'url', 'width', 'height']
-        }
+        },
+        gallery: {
+          select: ['name', 'url', 'width', 'height']
+        },
+        dataSheet: true,
       }
     });
     const sanitizedEntity = await this.sanitizeOutput(entity, ctx);

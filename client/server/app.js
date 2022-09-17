@@ -29,6 +29,9 @@ const hbs = create({
         },
         compare(a, operator, b, options) {
             return helpers().compare(a, operator, b, options);
+        },
+        addCommas(num) {
+            return helpers().addCommas(num);
         }
     }
 });

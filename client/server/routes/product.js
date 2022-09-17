@@ -122,7 +122,7 @@ router.get('/:slug', async (req, res) => {
         throw new Error("Not found");
     }
 
-    const articleParams = {
+    const modelParams = {
         populate: {
             cover: {
                 fields: ['url', 'name', 'width', 'height']
@@ -130,12 +130,12 @@ router.get('/:slug', async (req, res) => {
             seo: seoPopulate()
         },
     };
-    const articleResponse = await callGet(`/product/${slug}`, articleParams);
-    const articleData = articleResponse.data.data;
-    req.app.locals.seoData = createSeoData(req, articleData.attributes.seo);
+    const modelResponse = await callGet(`/product/${slug}`, modelParams);
+    const modelData = modelResponse.data.data;
+    req.app.locals.seoData = createSeoData(req, modelData.attributes.seo);
 
     res.render('product/detail', {
-        articleData
+        modelData
     });
 });
 

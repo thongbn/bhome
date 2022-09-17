@@ -83,6 +83,9 @@ router.get('/:slug', async (req, res) => {
             cover: {
                 fields: ['url', 'name', 'width', 'height']
             },
+            images: {
+                fields: ['url', 'name', 'width', 'height']
+            },
             seo: seoPopulate()
         },
     };

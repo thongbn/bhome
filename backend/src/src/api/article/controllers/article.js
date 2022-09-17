@@ -18,6 +18,9 @@ module.exports = createCoreController(moduleId, ({strapi}) => ({
         thumb: {
           select: ['name', 'url', 'width', 'height']
         },
+        images: {
+          select: ['name', 'url', 'width', 'height']
+        },
         cover: {
           select: ['name', 'url', 'width', 'height']
         }

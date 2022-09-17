@@ -1,0 +1,140 @@
+<!-- PAGE BANNER SECTION -->
+<div class="page-banner-section section">
+    <div class="container">
+        <div class="row">
+            <div class="page-banner-content col-xs-12">
+                <h2>Sản phẩm</h2>
+                <ul class="breadcrumb">
+                    <li><a href="/">Trang chủ</a></li>
+                    <li><a href="/san-pham">Sản phẩm</a></li>
+                    <li class="active">{{modelData.attributes.name}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END PAGE BANNER SECTION -->
+
+<!-- PAGE SECTION START -->
+<div class="page-section section pt-100 pb-60">
+    <div class="container">
+        <div class="row mb-40">
+            <div class="col-12 col-md-6 col-lg-4 mb-40">
+                {{#if modelData.attributes.images}}
+                    <!-- Tab panes -->
+                    <div class="tab-content mb-10">
+                        {{#each modelData.attributes.images.data}}
+                            {{#compare @index "===" 0}}
+                                <div class="pro-large-img tab-pane active" id="pro-large-img-{{@index}}">
+                                    <img src="{{resourceUrl ../attributes.url}}"
+                                         alt="{{resourceUrl ../attributes.name}}"/>
+                                </div>
+                            {{else}}
+                                <div class="pro-large-img tab-pane" id="pro-large-img-{{@index}}">
+                                    <img src="{{resourceUrl ../attributes.url}}"
+                                         alt="{{resourceUrl ../attributes.name}}"/>
+                                </div>
+                            {{/compare}}
+
+                        {{/each}}
+                    </div>
+                    <!-- Nav tabs -->
+                    <div class="pro-thumb-img-slider nav">
+                        {{#each modelData.attributes.images.data}}
+                            <div>
+                                <a href="#pro-large-img-{{@index}}" data-bs-toggle="tab">
+                                    <img src="{{resourceUrl attributes.url}}"
+                                         alt="{{resourceUrl attributes.name}}"/>
+                                </a>
+                            </div>
+                        {{/each}}
+                    </div>
+                {{/if}}
+            </div>
+            <div class="col-12 col-md-6 col-lg-8 mb-40">
+                <div class="product-details">
+                    <h2 class="title">{{modelData.attributes.name}}</h2>
+                    <span class="price section">
+                        {{#if modelData.attributes.salePrice}}
+                            <span class="new">{{addCommas modelData.attributes.salePrice}} VND</span>
+                            <span class="old">{{addCommas modelData.attributes.price}} VND</span>
+                        {{else}}
+                            <span class="new">{{addCommas modelData.attributes.price}} VND</span>
+                        {{/if}}
+                    </span>
+                    <div class="short-desc section">
+                        <p><strong>Giới thiệu:</strong> {{nl2br modelData.attributes.shortDescription}}</p>
+                    </div>
+                    <div class="quantity-cart section">
+                        <button class="add-to-cart">Tư vấn</button>
+                    </div>
+                    <div class="share-icons section">
+                        {{#if commonData.facebook}}
+                            <a href="{{commonData.facebook}}" target="_blank" rel="noopener">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                        {{/if}}
+                        {{#if commonData.zalo}}
+                            <a href="{{commonData.zalo}}" target="_blank" rel="noopener">
+                                Zalo
+                            </a>
+                        {{/if}}
+                        {{#if commonData.youtube}}
+                            <a href="{{commonData.youtube}}" target="_blank" rel="noopener">
+                                <i class="fa fa-youtube"></i>
+                            </a>
+                        {{/if}}
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- Nav tabs -->
+                    <div class="col-12">
+                        <ul class="pro-info-tab-list section nav">
+                            <li><a class="active" href="#more-info" data-bs-toggle="tab">More info</a></li>
+                            <li><a href="#data-sheet" data-bs-toggle="tab">Data sheet</a></li>
+                        </ul>
+                    </div>
+                    <!-- Tab panes -->
+                    <div class="tab-content col-12">
+                        <div class="pro-info-tab tab-pane active" id="more-info">
+                            {{{modelData.attributes.description}}}
+                            {{#if modelData.attributes.gallery.data}}
+                                <hr/>
+                                <h2 class="mt-20 mb-20">Thư viện ảnh</h2>
+                                <div class="m-p-g">
+                                    <div class="m-p-g__thumbs" data-google-image-layout data-max-height="100">
+                                        {{#each modelData.attributes.gallery.data}}
+                                            <img src="{{resourceUrl attributes.url}}"
+                                                 alt="{{attributes.name}}"
+                                                 data-full="{{resourceUrl attributes.url}}"
+                                                 class="m-p-g__thumbs-img"/>
+                                        {{/each}}
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <div class="m-p-g__fullscreen"></div>
+                                </div>
+                            {{/if}}
+                        </div>
+                        <div class="pro-info-tab tab-pane" id="data-sheet">
+                            {{#if modelData.attributes.dataSheet}}
+                                <table class="table-data-sheet table-striped">
+                                    <tbody>
+                                    {{#each modelData.attributes.dataSheet}}
+                                        <tr>
+                                            <td>{{title}}</td>
+                                            <td>{{value}}</td>
+                                        </tr>
+                                    {{/each}}
+                                    </tbody>
+                                </table>
+                            {{/if}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- PAGE SECTION END -->
+
+{{> home/StepsBlock}}
