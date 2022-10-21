@@ -9,7 +9,8 @@ module.exports = ({ env }) => ({
       database: env('DB_NAME'),
       user: env('DB_USER'),
       password: env('DB_PASSWORD'),
-      timezone: env('DB_TIMEZONE')
+      timezone: env('DB_TIMEZONE'),
+      charset: env('DATABASE_CHARSET', 'utf8mb4'),
     },
     useNullAsDefault: true,
   },
